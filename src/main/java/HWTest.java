@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class HWTest {
@@ -55,6 +56,16 @@ public class HWTest {
         }
         System.out.println(stringBuilder.toString());
         return result = stringBuilder.toString();
+    }
+
+    public static String nameCheckWithStreamEx1(List<String> name){
+        List<String> intStream =  IntStream
+                .range(0, name.size())
+                .filter(index -> index % 2 == 0)
+                .mapToObj(i -> + i+1 + ". " + name.get(i))
+                .collect(Collectors.toList());
+        String result = String.join(", ", intStream);
+        return result;
     }
 
     public static List<String> sortToUpperCaseEx2(List<String> names) {
