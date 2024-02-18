@@ -17,10 +17,11 @@ public class HWTest {
         String[] array = {"1, 5, 9", "4, 2, 0"};
 
 
-        // Exercise 1;
+        // Exercise 1: two methods: first one with functional interface, second with stream;
         //nameCheckEx1(listName, count -> count % 2 != 0);
+        //nameCheckWithStreamEx1(listName);
 
-        // Exercise 2; two methods: one with stream, second with functional interface;
+        // Exercise 2; two methods: first one with stream, second with functional interface;
         //sortToUpperCaseEx2(listName);
         //sortToUpperWithFunctionalEx2(listName, names -> names.sort(Comparator.naturalOrder()));
 
@@ -65,6 +66,7 @@ public class HWTest {
                 .mapToObj(i -> + i+1 + ". " + name.get(i))
                 .collect(Collectors.toList());
         String result = String.join(", ", intStream);
+        System.out.println(result);
         return result;
     }
 
